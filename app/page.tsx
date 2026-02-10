@@ -1,52 +1,24 @@
-"use client";
-
-import { clsx } from "clsx";
-import dayjs from "dayjs";
-import { SunMoon } from "lucide-react";
-import Image from "next/image";
-import { useEffect } from "react";
-import toast from "react-hot-toast";
-import { useGlobalStore } from "@/store/globalStore";
-
 export default function HomePage() {
-  // Using Zustand global store for state management example
-  const { loggedUser, setLoggedUser } = useGlobalStore();
-  const { lightTheme, setLightTheme } = useGlobalStore();
+  // Egyszerű változók használata (egy érték tárolására használjuk őket)
+  const szöveg: string = "Körte";
+  let szám: number = 3.14;
+  const logikai: boolean = true; // false
 
-  useEffect(() => {
-    toast.success(`Render on: ${dayjs().format("YYYY.MM.DD HH:mm:ss")}`);
-  }); // no dependency array to demonstrate re-render toast
+  // Értékadás:
+  szám = 12;
+  console.log(szám);
 
-  function handleThemeToggle() {
-    setLightTheme(!lightTheme);
-    document.documentElement.classList.toggle("dark", lightTheme);
-  }
-
+  // JSX kóddal visszatérő függvénynek csak egy gyökéreleme lehet
+  // A gyökér elem gyakran React fragment: <> </>
+  // JSX kódban nincs class attribútum,
+  // helyette a className attribútumot kell használni
+  // a return után akkor kell zárójel "()", ha a JSX kód több soros
+  // JSX kódban kapcsos zárójelek közé JavaScript kifejezések kerülhetnek
+  // A kapcsos zárójelek közé JavaScript utasítások (if, for, stb.) nem kerülhetnek
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-200 py-2 dark:bg-gray-800">
-      <h1 className={clsx("mb-6 text-3xl font-bold", lightTheme ? "text-black" : "text-white")}>
-        {"Hello, "}
-        {loggedUser || (
-          <Image
-            alt="next logo"
-            className="p-2 inline dark:bg-white dark:rounded-md"
-            height={0}
-            src="next.svg"
-            width={110}
-          />
-        )}
-        ! 😎
-      </h1>
-      <input
-        className="input input-primary"
-        type="text"
-        value={loggedUser || ""}
-        onChange={(e) => setLoggedUser(e.target.value)}
-      />
-      <button className="btn mt-4 btn-primary" onClick={handleThemeToggle}>
-        <SunMoon className="mr-2" size={24} />
-        Toggle Theme
-      </button>
+    <div>
+      <h1 className="text-red-600">Hello World!</h1>
+      <div>A szám változó értéke: {szám}</div>
     </div>
   );
 }
