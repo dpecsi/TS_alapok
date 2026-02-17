@@ -56,7 +56,7 @@ export default function SzelekcioPage() {
       break;
   }
 
-  const jegy2: number = 3;
+  const jegy2: number = 6;
   let értékelés2: string = "";
   if (jegy2 == 1) {
     értékelés2 = "Elégtelen";
@@ -88,6 +88,9 @@ export default function SzelekcioPage() {
       </p>
       <p>
         A(z) {jegy} jegy szöveges jelentése: {értékelés}
+      </p>
+      <p>
+        A(z) {jegy2} jegy2 szöveges jelentése: {értékelés2}
       </p>
     </>
   );
