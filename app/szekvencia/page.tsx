@@ -8,7 +8,7 @@ export default function SzekvenciaPage() {
   const a: number = 12;
   const b: number = 34;
   const T: number = terület(a, b);
-  const K: number = kerület(a, b);
+  // const K: number = kerület(a, b);
   return (
     <>
       <h1>Téglalap területe és kerülete</h1>
@@ -16,7 +16,7 @@ export default function SzekvenciaPage() {
       <p>a = {a}</p>
       <p>b = {b}</p>
       <p>T = {T}</p>
-      <p>K = {K}</p>
+      <p>K = {kerület(a, b)}</p>
     </>
   );
 }

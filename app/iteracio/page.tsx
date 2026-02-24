@@ -1,4 +1,5 @@
 export default function IteracioPage() {
+  // LNKO = Legnagyobb Közös Osztó
   // LNKO - Kivonásos algoritmus - Elöltesztelő ciklus
   let a: number = 13;
   const eredetiA = a;
